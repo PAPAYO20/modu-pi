@@ -17,7 +17,7 @@ const listBranches = async () => {
         });
 
         const data = await res.json();
-        const branches = data.branches; // Array de sucursales
+        const branches = data; // Array de sucursales
 
         branches.forEach((branch) => {
             response += `<tr>
