@@ -9,21 +9,47 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
-model product {
-  id Int @id @default(autoincrement())
-  name String @unique
-  price Int @default(999)
-  createdAt DateTime @default(now())
-  category category @relation(fields: [categoryid],references: [id])
-  categoryid Int
+// Branch model: name, location, manager, phone, email, status(Active, Inactive, default: Active)
 
-} 
-model category{
- id Int @id @default(autoincrement())
- name String @unique
- prodcts product[] 
+model Branch {
+  id       Int    @id @default(autoincrement())
+  name     String
+  location String
+  manager  String
+  phone    String
+  email    String
+  status   String @default("Active")
+}
+
+// Client model: name
+
+model Client {
+  id      Int       @id @default(autoincrement())
+  name    String
+  returns Returns[]
+}
+
+// Product model: name
+
+model Product {
+  id      Int       @id @default(autoincrement())
+  name    String
+  returns Returns[]
+}
+
+// Returns model: product, client, reason, quantity, returnDate
+
+model Returns {
+  id         Int      @id @default(autoincrement())
+  productId  Int
+  clientId   Int
+  product    Product  @relation(fields: [productId], references: [id])
+  client     Client   @relation(fields: [clientId], references: [id])
+  reason     String
+  quantity   Int
+  returnDate DateTime
 }
