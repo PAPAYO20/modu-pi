@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cliente</title>
+    <link rel="stylesheet" href="../public/css/styles.css"> <!-- Enlace a un archivo CSS si lo tienes -->
+</head>
+<body>
+    <header>
+        <h1>Crear Cliente</h1>
+        <button onclick="window.location.href='index.html'" class="dashboard-button">Volver al Dashboard</button>
+    </header>
+
+    <section id="clientFormSection">
+        <h2>Nuevo Cliente</h2>
+        
+        <form id="clientForm">
+            <label for="clientName">Nombre del Cliente:</label>
+            <input type="text" id="clientName" name="name" placeholder="Nombre del cliente" required><br>
+            
+            <button type="button" id="submitButton" onclick="createClient()">Guardar Cliente</button>
+        </form>
+    </section>
+
+    <script src="../public/js/clients.js"></script>
+</body>
+</html>

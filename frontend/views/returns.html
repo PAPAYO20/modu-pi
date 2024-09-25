@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de devoluciones</title>
+    <link rel="stylesheet" href="../public/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Gestión de devoluciones</h1>
+      <button onclick="window.location.href='index.html'" class="dashboard-button">Volver al Dashboard</button>
+    </header>
+
+    <section>
+      <!-- Formulario para crear/actualizar devolución -->
+      <h2 id="formTitle">Crear Devolución</h2>
+      <h2 id="editFormTitle" style="display: none;">Editar Devolución</h2>
+      <form id="returnForm">
+        <label for="productId">Nombre del Producto:</label>
+        <select id="productId" name="productId" required>
+          <option value="">Seleccione un producto</option>
+        </select>
+        
+        <label for="clientId">Nombre del Cliente:</label>
+        <select id="clientId" name="clientId" required>
+          <option value="">Seleccione un cliente</option>
+        </select>
+
+        <label for="reason">Razón de la Devolución:</label>
+        <input
+          type="text"
+          id="reason"
+          name="reason"
+          placeholder="Ingrese la razón de la devolución"
+          required
+        />
+
+        <label for="quantity">Cantidad:</label>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          placeholder="Ingrese la cantidad"
+          required
+        />
+
+        <label for="returnDate">Fecha de Devolución:</label>
+        <input
+          type="datetime-local"
+          id="returnDate"
+          name="returnDate"
+          required
+        />
+
+        <button type="button" id="submitButton" onclick="createReturn()">
+          Crear Devolución
+        </button>
+      </form>
+    </section>
+
+    <section>
+      <hr />
+      <!-- Tabla para mostrar devoluciones -->
+      <h2>Lista de Devoluciones</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre del Producto</th>
+            <th>Nombre del Cliente</th>
+            <th>Razón</th>
+            <th>Cantidad</th>
+            <th>Fecha de Devolución</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="returnsTableBody">
+          <!-- Las devoluciones se insertarán dinámicamente aquí -->
+        </tbody>
+      </table>
+    </section>
+
+    <script src="../public/js/returns.js"></script>
+  </body>
+</html>

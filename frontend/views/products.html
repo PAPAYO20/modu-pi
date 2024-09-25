@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Producto</title>
+    <link rel="stylesheet" href="../public/css/styles.css"> <!-- Enlace a un archivo CSS si lo tienes -->
+</head>
+<body>
+    <header>
+        <h1>Crear Producto</h1>
+        <button onclick="window.location.href='index.html'" class="dashboard-button">Volver al Dashboard</button>
+    </header>
+
+    <section id="productFormSection">
+        <h2>Nuevo Producto</h2>
+        
+        <form id="productForm">
+            <label for="productName">Nombre del Producto:</label>
+            <input type="text" id="productName" name="name" placeholder="Nombre del producto" required><br>
+            
+            <button type="button" id="submitButton" onclick="createProduct()">Guardar Producto</button>
+        </form>
+    </section>
+
+    <script src="../public/js/products.js"></script>
+</body>
+</html>

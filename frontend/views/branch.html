@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Sucursales</title>
+    <link rel="stylesheet" href="../public/css/styles.css"> <!-- Enlace a un archivo CSS si lo tienes -->
+</head>
+<body>
+    <header>
+        <h1>Gestión de Sucursales</h1>
+        <button onclick="window.location.href='index.html'" class="dashboard-button">Volver al Dashboard</button>
+    </header>
+
+    <!-- Formulario para crear o editar sucursales -->
+    <section id="branchFormSection">
+        <h2 id="formTitle">Crear Nueva Sucursal</h2>
+        <h2 id="editFormTitle" style="display: none;">Editar Sucursal</h2>
+        
+        <form id="branchForm">
+            <label for="createName">Nombre de la Sucursal:</label>
+            <input type="text" id="createName" placeholder="Nombre de la sucursal" required><br>
+            
+            <label for="createLocation">Ubicación:</label>
+            <input type="text" id="createLocation" placeholder="Ubicación de la sucursal" required><br>
+            
+            <label for="createManager">Gerente:</label>
+            <input type="text" id="createManager" placeholder="Nombre del gerente" required><br>
+            
+            <label for="createPhone">Teléfono:</label>
+            <input type="text" id="createPhone" placeholder="Número de teléfono" required><br>
+            
+            <label for="createEmail">Correo Electrónico:</label>
+            <input type="email" id="createEmail" placeholder="Correo electrónico" required><br>
+            
+            <label for="createStatus">Estado:</label>
+            <select id="createStatus" required>
+                <option value="active">Activo</option>
+                <option value="inactive">Inactivo</option>
+            </select><br>
+
+            <button type="button" id="submitButton" onclick="createBranch()">Guardar Sucursal</button>
+        </form>
+    </section>
+
+    <!-- Tabla para listar las sucursales -->
+    <section id="branchListSection">
+        <h2>Lista de Sucursales</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Ubicación</th>
+                    <th>Gerente</th>
+                    <th>Teléfono</th>
+                    <th>Correo Electrónico</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="branchesTableBody">
+                <!-- Las filas se poblarán aquí -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="../public/js/branch.js"></script>
+</body>
+</html>
